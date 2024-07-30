@@ -1,0 +1,22 @@
+아래와 같이 이용하면
+
+<router-link to="/주소1/주소2">클릭</router-link>
+
+to에는 문자열만 입력 가능하고 변수 사용이 불가능 합니다.
+
+-
+
+기본적으로 template에서 사용하는 모든 태그들안에는 변수 사용이 불가능 하지만 변수를 사용할 수 있도록 도와주는 것이 v-bind 입니다.
+
+따라서 동적인 주소 사용을 위하여 아래와 같이 사용하는 것이죠.
+
+<router-link v-bind:to="`/user/${item.id}`">클릭</router-link>
+
+또한 v-bind: 는 v-bind 제외하고 : 하나로 아래와 같이 축약이 가능합니다.
+
+<router-link :to="`/user/${item.id}`">클릭</router-link>
+
+v-bind와 같이 v-xxxx으로 생긴 내장 기능들을 여러가지 있습니다.
+
+아래는 v-blind 공식 문서 이며 참고하셔요
+https://vuejs.org/api/built-in-directives.html#v-bind

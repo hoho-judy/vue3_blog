@@ -8,10 +8,12 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+            <router-link class="nav-link active" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <!-- <a class="nav-link" href="#">Link</a> -->
+            <router-link class="nav-link" to="/list">List</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -25,18 +27,20 @@
     </div>
   </nav>
   
-  <div class="container mt-4">
-    <h5>쀼의 블로그</h5>
-    <p>vue로 만듦</p>
-  </div>
+  <!-- a태그와 유사한 역할을 수행 --> 
+  <!-- <router-link to="/">Home</router-link> -->
+  <!-- <router-link to="/list">글목록 보기</router-link> -->
 
-  <List :blogs="blogs" />
+  <!-- 라우터 - 페이지 나누는 방법(특정 url로 접속했을 때 특정 화면을 보여주고 싶을 때)--> 
+  <router-view :blogs="blogs"></router-view>
+  <!-- <List :blogs="blogs" /> -->
 
 </template>
    
 <script>
-import List from './components/List.vue';
+// import List from './components/List.vue';
 import blogData from './assets/data.js';
+
 
 export default {
   name: 'App',
@@ -46,7 +50,7 @@ export default {
     }
   },
   components: {
-    List: List,
+    // List: List,
   }
 }
 </script>
